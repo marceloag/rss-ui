@@ -1,0 +1,136 @@
+@import "compass/css3";
+@import "compass/reset";
+@import "colores";
+@import "breakpoint";
+
+*{
+	font-family: "Roboto";
+}
+html, body{
+	height: 100%;
+}
+
+body{
+		background-color: $clouds;
+}
+
+.box{
+	// width:500px;
+	margin: auto;
+	display: block;
+}
+
+.header{
+	background-color: $turquoise;
+	font-family: "Roboto";
+	color: white;
+	font-size: 2em;
+	margin: auto;
+	height: 2em;
+	position: relative;
+	@include transition-property(all);
+  	@include transition-duration(.3s);
+  	@include transition-timing-function(ease);
+}
+.box-header{
+	position: relative;
+	font-family: "Roboto";
+	color: white;
+	font-size: 2em;
+	display: block;
+	h1{
+		font-weight: 100;
+		position: absolute;
+		bottom: .5em;
+		right: .5em;
+	}
+}
+#search{
+	display: block;
+	border: 3px solid $turquoise - 10;
+	font-size: .7em;
+	background-color: $turquoise + 200;
+	padding: .2em;
+	width: 40%;
+	position: absolute;
+	bottom: .5em;
+	z-index: 999;
+	left: .5em;
+	outline: 0;
+	font-weight: 100;
+	&:focus{
+		color: $turquoise - 200;
+		border: 3px solid $greensea - 10;
+		background-color: $greensea + 200;
+	}
+	&:focus + .header{
+		background-color: $greensea !important;
+		height: 1em;
+	}
+}
+.box-content{
+
+	padding: 1em 0;
+	display: block;
+	@include border-bottom-left-radius(8px);
+	@include border-bottom-right-radius(8px);
+	@include breakpoint(960px){
+		overflow: hidden;
+	};
+	h1{
+		font-family: 'Roboto';
+		font-size: 2em;
+		color: $asbestos;
+		font-weight: 300;
+		margin-bottom: .3em;
+	}
+	section{
+		box-sizing:border-box;
+		padding: 1.2em;
+		background-color: white;
+		width: 86%;
+		display: block;
+		margin: auto;
+		margin-bottom: 1em;
+		padding: 1em;
+		@include box-shadow($clouds - 10 0 3px 5px);
+		@include transition-property(all);
+		@include transition-duration(.2s);
+		@include transition-timing-function(ease-in);
+		@include breakpoint(960px){
+			width: 30%;
+			margin: 1%;
+			display: inline-block !important;
+			vertical-align: top;
+		};
+		&:hover{
+			@include scale(1.08); 
+			cursor: pointer;
+		}
+		p{
+			font-family: 'Quicksand';
+			color: $asbestos;
+			line-height: 1.4em;
+			text-align: justify;
+			font-weight: 300;
+		}
+	}
+}
+
+.more{
+	background-color: $pumpkin !important;
+	color: white;
+	font-weight: 100;
+	font-size: 2em;
+	font-family: 'Roboto';
+	text-align: center;
+	padding: 1.7em 0 !important;
+	display: block;
+	&:hover{
+		background-color: $orange !important;
+	}
+	@include breakpoint(960px){
+		padding: 2.7em 0 !important;
+	}
+}
+
